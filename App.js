@@ -1,16 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Button, Alert} from 'react-native';
-
+import Carousel from 'react-native-carousel-control';
 
 export default class App extends React.Component {
-
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-        <Text>d스트</Text>
+        <Text>텍스d트</Text>
         <Text>텍스트</Text>
-        <Text>완료</Text>
+        <Text>여기 navigator 사용해줄 공간</Text>
+
         </View>
         <View style={styles.circleindicator}>
           <TouchableOpacity>
@@ -60,20 +60,21 @@ export default class App extends React.Component {
           <Button title="취미" onPress={()=>Alert.alert('공부')}/>
           <Button title="약속" onPress={()=>Alert.alert('공부')}/>
           <Button title="기타" onPress={()=>Alert.alert('공부')}/>
-
-          
-
         </View>
         <View style={styles.cardview}>
-          <TouchableOpacity>
-            <Text style={{fontSize:40}}>CARD+button+인디케이터들어갈 자리</Text>
-          </TouchableOpacity>
+
+          <Carousel pageStyle={{backgroundColor:"white", borderRadius:5, height:260, width:188}}>
+              <Text>1</Text>
+              <Text>2</Text>
+              <Text>3</Text>
+              <Text>4</Text>
+          </Carousel>
+
         </View>
         <View style={styles.navigator}>
         <TouchableOpacity>
             <Text>버튼1</Text>
             </TouchableOpacity>
-
             <Text>버튼2</Text>
             <Text>버튼3</Text>
         </View>
@@ -108,6 +109,8 @@ const styles = StyleSheet.create({
   cardview: {
     flex: 6,
     backgroundColor: 'green',
+    alignItems:'center',
+    justifyContent:'center',
   },
   navigator: {
     flex: 1,
