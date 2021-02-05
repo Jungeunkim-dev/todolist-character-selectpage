@@ -1,6 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Button, Alert, YellowBox } from 'react-native';
 import Carousel from 'react-native-carousel-control';
+import Modal from 'react-native-modal';
+
+
 
 export default class App extends React.Component {
   render() {
@@ -110,6 +113,7 @@ export default class App extends React.Component {
               style={{ width: 154, height: 203}}
             />
               <Text>몽몽</Text>
+              
               </TouchableOpacity>
               <Text>2</Text>
               <Text>3</Text>
@@ -166,6 +170,8 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent: 'center',
   },
+
+
   navigator: {
     height: 52,
     flex: 1,
