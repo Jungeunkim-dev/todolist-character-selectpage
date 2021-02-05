@@ -4,7 +4,7 @@ import Carousel from 'react-native-carousel-control';
 import Modal from 'react-native-modal';
 
 
-
+//20200205 modified
 export default class App extends React.Component {
   render() {
     return (
@@ -180,8 +180,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
   },
 
-  //button components
-
+  //button component
 
   // 캐릭터 버튼
   characterbutton: {
