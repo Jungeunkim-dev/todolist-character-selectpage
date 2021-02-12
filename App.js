@@ -3,6 +3,7 @@ import { ScrollView, Modal, StyleSheet, Text, View, Image, TextInput, TouchableO
 import Feather from 'react-native-vector-icons/Feather';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
+
 export default class App extends React.Component {
   state = {
     isVisible: false
@@ -11,10 +12,6 @@ export default class App extends React.Component {
   state2 = {
     isVisible: false,
     index: 0
-  }
-
-  state3 = {
-    onClicked: false
   }
 
   displayModal(show) {
@@ -31,7 +28,6 @@ export default class App extends React.Component {
       index: 0,
       carouselItems: [
         {
-
           key: 'dog',
           title: "Item 1",
           text: "펭귄 펭귄",
@@ -73,10 +69,13 @@ export default class App extends React.Component {
         padding: 30,
         //여기서부터 custom
         marginTop: 32,
+        elevation:5,
       }}>
         <Text style={{ fontSize: 30 }}>{item.title}</Text>
         <Text>{item.text}</Text>
-        <Text>{index + 1}</Text>
+        <Text>현재 인덱스:{index + 1}</Text>
+        
+
       </View>
 
     )
@@ -205,8 +204,11 @@ export default class App extends React.Component {
               renderItem={this._renderItem}
               onSnapToItem={(index) => this.setState(
                 { activeIndex: index })} />
-
                 {this.pagination}
+                
+
+
+
           </View>
           <TouchableOpacity
             onPress={() => {
@@ -218,7 +220,7 @@ export default class App extends React.Component {
 
         </View>
         <View style={styles.navigator}>
-          <Text>네비게이터 적용해 줄 공간입니다.</Text>
+          <Text>네비게이터</Text>
 
         </View>
         <Modal
@@ -258,7 +260,7 @@ export default class App extends React.Component {
           </View>
 
         </Modal>
-
+        <View style={styles.blankspace}><Text></Text></View>
       </View>
 
     );
@@ -268,12 +270,13 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    
   },
   header: {
     height: 64,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: 'white',
+    backgroundColor: 'yellow',
   },
   circleindicator: {
     height: 72,
@@ -291,9 +294,10 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   cardview: {
-    height: 390,
+    height: 376,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'skyblue',
   },
   charactercard: {
     marginTop: 32,
@@ -303,11 +307,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   navigator: {
-    height: 52,
-    flex: 1,
+    height: 56,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    backgroundColor: 'white',
+    backgroundColor: 'blue',
+  },
+  blankspace:{
+    backgroundColor:'black',
+    height:24,
   },
 
   //button component
