@@ -29,7 +29,7 @@ export default class App extends React.Component {
       carouselItems: [
         {
           key: 'dog',
-          title: "Item 1",
+          title: "Item",
           text: "펭귄 펭귄",
         },
         {
@@ -69,13 +69,10 @@ export default class App extends React.Component {
         padding: 30,
         //여기서부터 custom
         marginTop: 32,
-        elevation:5,
       }}>
         <Text style={{ fontSize: 30 }}>{item.title}</Text>
         <Text>{item.text}</Text>
         <Text>현재 인덱스:{index + 1}</Text>
-        
-
       </View>
 
     )
@@ -297,7 +294,6 @@ const styles = StyleSheet.create({
     height: 376,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:'skyblue',
   },
   charactercard: {
     marginTop: 32,
