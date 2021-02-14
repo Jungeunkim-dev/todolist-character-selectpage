@@ -24,29 +24,39 @@ export default class App extends React.Component {
       carouselItems: [
         {
           key: 'dog',
-          title: "Item",
-          text: "펭귄 펭귄",
+          title: "몽몽",
+          text: "MONGMONG",
+          illustration: require('./characterimage/강아지전신.png') ,
+          //'./characterimage/ㄱ캐릭터전신 (1).png'
 
         },
         {
           key: 'sudal',
-          title: "Item 2",
-          text: "판다설명",
+          title: "달수리",
+          text: "DALSURI",
+          illustration: require('./characterimage/수달전신.png'),
+
         },
         {
           key: 'rabbit',
-          title: "Item 3",
-          text: "Text 3",
+          title: "낑이",
+          text: "KKING",
+          illustration: require('./characterimage/토끼전신.png'),
+
         },
         {
           key: 'panda',
-          title: "Item 4",
-          text: "Text 4",
+          title: "판다씨",
+          text: "PANDASEE",
+          illustration: require('./characterimage/판다전신.png'),
+
         },
         {
           key: 'penguin',
-          title: "Item 5",
-          text: "Text 5",
+          title: "펭펭",
+          text: "PENG PENG",
+          illustration: require('./characterimage/펭귄전신.png'),
+
         },
 
       ]
@@ -56,6 +66,7 @@ export default class App extends React.Component {
 
 
   _renderItem({ item, index }) {
+
     return (
       <View style={{
         backgroundColor: 'white',
@@ -64,14 +75,24 @@ export default class App extends React.Component {
         borderRadius: 15,
         height: 260,
         width: 188,
-        padding: 30,
+        padding: 10,
         //여기서부터 custom
         marginTop: 32,
-      }}>
-        <Text style={{ fontSize: 30 }}>{item.title}</Text>
-        <Text>{item.text}</Text>
-        <Text>현재 인덱스:{index + 1}</Text>
-      </View>
+        alignContent:'center',
+        justifyContent:'center',
+      }}>        
+              <Image 
+      source={item.illustration}
+      style={{width:154, height:203}}
+      resizeMode={'stretch'}
+        />
+
+        <Text style={{ fontSize: 14 }}>{item.title}</Text>
+        <Text style={{color:'#9e9e9e'}}>{item.text}</Text>
+
+
+
+          </View>
     )
   }
 
@@ -396,6 +417,18 @@ const styles = StyleSheet.create({
     backgroundColor:'#eeeeee',
   },
 
+
+  carouselcardview:{
+    backgroundColor: 'white',
+    borderColor: 'black',
+    elevation:5,
+    borderRadius: 15,
+    height: 260,
+    width: 188,
+    padding: 30,
+    //여기서부터 custom
+    marginTop: 32,
+  }
 
 
 
