@@ -20,11 +20,13 @@ export default class App extends React.Component {
       index: 0, // 카드뷰 인덱스
       activeSlide:0,
 
+      //image url 추가
       carouselItems: [
         {
           key: 'dog',
           title: "Item",
           text: "펭귄 펭귄",
+
         },
         {
           key: 'sudal',
