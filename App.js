@@ -48,16 +48,20 @@ export default class App extends React.Component {
           key: 'panda',
           title: "판다씨",
           text: "PANDASEE",
-          illustration: require('./characterimage/판다전신.png'),
+          illustration: require('./characterimage/펭귄전신.png'),
 
         },
         {
           key: 'penguin',
           title: "펭펭",
           text: "PENG PENG",
-          illustration: require('./characterimage/펭귄전신.png'),
+          illustration: require('./characterimage/판다전신.png'),
 
         },
+        {
+          key:'add',
+          title:"나만의 캐릭터를 완성해보아요",
+        }
 
       ]
     }
@@ -71,7 +75,7 @@ export default class App extends React.Component {
       <View style={{
         backgroundColor: 'white',
         borderColor: 'black',
-        elevation:5,
+        elevation:8,
         borderRadius: 15,
         height: 260,
         width: 188,
@@ -89,9 +93,6 @@ export default class App extends React.Component {
 
         <Text style={{ fontSize: 14 }}>{item.title}</Text>
         <Text style={{color:'#9e9e9e'}}>{item.text}</Text>
-
-
-
           </View>
     )
   }
