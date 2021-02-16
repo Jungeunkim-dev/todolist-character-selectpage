@@ -8,12 +8,9 @@ export default class App extends React.Component {
     isVisible: false,
   };
 
-
   displayModal(show) {
     this.setState({ isVisible: show })
   }
-
-
   constructor(props) {
     super(props);
     this.state2 = { // cardview 관련 state2.
@@ -60,16 +57,14 @@ export default class App extends React.Component {
         },
         {
           key:'add',
-          title:"나만의 캐릭터를 완성해보아요",
+          title:"나만의 캐릭터를 완성해봐요",
         }
 
       ]
     }
   }
 
-
-
-  _renderItem({ item, index }) {
+  _renderItem({ item }) {
 
     return (
       <View style={{
@@ -80,13 +75,13 @@ export default class App extends React.Component {
         height: 260,
         width: 188,
         padding: 10,
-        //여기서부터 custom
         marginTop: 32,
         alignContent:'center',
         justifyContent:'center',
       }}>        
               <Image 
       source={item.illustration}
+      marginLeft={8}
       style={{width:154, height:203}}
       resizeMode={'stretch'}
         />
@@ -140,6 +135,7 @@ export default class App extends React.Component {
                 require('./characterimage/강.png')
               }
               style={{ width: 37, height: 30 }}
+              resizeMode='stretch'
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
@@ -149,6 +145,8 @@ export default class App extends React.Component {
                 require('./characterimage/수.png')
               }
               style={{ width: 37, height: 30 }}
+              resizeMode='stretch'
+
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
@@ -158,6 +156,8 @@ export default class App extends React.Component {
                 require('./characterimage/토.png')
               }
               style={{ width: 37, height: 30 }}
+              resizeMode='stretch'
+
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
@@ -167,6 +167,8 @@ export default class App extends React.Component {
                 require('./characterimage/판.png')
               }
               style={{ width: 37, height: 30 }}
+              resizeMode='stretch'
+
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
@@ -176,6 +178,8 @@ export default class App extends React.Component {
                 require('./characterimage/펭.png')
               }
               style={{ width: 37, height: 30 }}
+              resizeMode='stretch'
+
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
@@ -185,6 +189,8 @@ export default class App extends React.Component {
                 require('./characterimage/537.png')
               }             
                style={{ height:56, width:56 }}
+               resizeMode='stretch'
+
             />
           </TouchableOpacity>
 
@@ -237,11 +243,8 @@ export default class App extends React.Component {
                   {
                     activeSlide: index
                   })
-                
               }
-
               inactiveSlideOpacity={1}
-
             >
             </Carousel>
               {this.pagination}
