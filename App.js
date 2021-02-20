@@ -127,7 +127,38 @@ export default class App extends React.Component {
         <View style={styles.header}>
           <Text>네비게이션 부분</Text>
         </View>
+        <ScrollView>
         <View style={styles.circleindicator}>
+          <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
+            style={styles.characterbutton}>
+            <Image
+              source={
+                require('./characterimage/강.png')
+              }
+              style={{ width: 37, height: 30 }}
+              resizeMode='stretch'
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
+            style={styles.characterbutton}>
+            <Image
+              source={
+                require('./characterimage/강.png')
+              }
+              style={{ width: 37, height: 30 }}
+              resizeMode='stretch'
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
+            style={styles.characterbutton}>
+            <Image
+              source={
+                require('./characterimage/강.png')
+              }
+              style={{ width: 37, height: 30 }}
+              resizeMode='stretch'
+            />
+          </TouchableOpacity>
           <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
             style={styles.characterbutton}>
             <Image
@@ -195,6 +226,7 @@ export default class App extends React.Component {
           </TouchableOpacity>
 
         </View>
+        </ScrollView>
 
         <View style={styles.category}>
 
@@ -322,7 +354,6 @@ const styles = StyleSheet.create({
   circleindicator: {
     height: 72,
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
     borderBottomColor: 'black',
     borderBottomWidth: StyleSheet.hairlineWidth
   },
