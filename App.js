@@ -3,6 +3,10 @@ import { ScrollView, Modal, StyleSheet, Text, View, Image, TextInput, TouchableO
 import Feather from 'react-native-vector-icons/Feather';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
+//change text value dynamically//
+//바뀌는 index 값을 3개 component들에 전달해 주어야 함.//
+
+
 export default class App extends React.Component {
   state = {
     isVisible: false,
