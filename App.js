@@ -3,7 +3,9 @@ import { ScrollView, Modal, StyleSheet, Text, View, Image, TextInput, TouchableO
 import Feather from 'react-native-vector-icons/Feather';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
-
+//오늘 해야할것
+//pagination 빼기로 건의, 네비게이션 제외 부분 정리, 버튼들 opacity 정리, 버튼 인터렉션 정리
+//시연 자료 만들기
 
 export default class App extends React.Component {
   state = {
@@ -262,8 +264,6 @@ export default class App extends React.Component {
           
         </View>
         <View style={styles.cardview}>
-
-
           <View>
             <Carousel
               layout={'default'}
