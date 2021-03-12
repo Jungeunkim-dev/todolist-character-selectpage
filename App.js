@@ -3,11 +3,11 @@ import { ScrollView, Modal, StyleSheet, Text, View, Image, TextInput, TouchableO
 import Feather from 'react-native-vector-icons/Feather';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
-//오늘 해야할것
-//pagination 빼기로 건의, 네비게이션 제외 부분 정리, 버튼들 opacity 정리, 버튼 인터렉션 정리
-//시연 자료 만들기
+//reset__ terminate this project
 
 export default class App extends React.Component {
+
+
   state = {
     isVisible: false,
   };
@@ -15,6 +15,10 @@ export default class App extends React.Component {
   displayModal(show) {
     this.setState({ isVisible: show })
   }
+  characteraddbigbutton=()=>{
+    Alert.alert('나만의 캐릭터를 추가해보세요!')
+  }
+
   constructor(props) {
     super(props);
     this.state2 = { // cardview 관련 state2.
@@ -28,6 +32,8 @@ export default class App extends React.Component {
           title: "몽몽",
           text: "MONGMONG",
           illustration: require('./characterimage/강아지전신.png') ,
+
+          touchable:false,
           //'./characterimage/ㄱ캐릭터전신 (1).png'
 
         },
@@ -36,6 +42,7 @@ export default class App extends React.Component {
           title: "달수리",
           text: "DALSURI",
           illustration: require('./characterimage/수달전신.png'),
+          touchable:false,
 
         },
         {
@@ -43,6 +50,7 @@ export default class App extends React.Component {
           title: "낑이",
           text: "KKING",
           illustration: require('./characterimage/토끼전신.png'),
+          touchable:false,
 
         },
         {
@@ -50,6 +58,7 @@ export default class App extends React.Component {
           title: "판다씨",
           text: "PANDASEE",
           illustration: require('./characterimage/펭귄전신.png'),
+          touchable:false,
 
         },
         {
@@ -57,11 +66,14 @@ export default class App extends React.Component {
           title: "펭펭",
           text: "PENG PENG",
           illustration: require('./characterimage/판다전신.png'),
+          touchable:false,
 
         },
         {
           key:'add',
           title:"나만의 캐릭터를 완성해봐요",
+          illustration: require('./characterimage/537.png'),
+          touchable:true,
         }
 
       ]
@@ -82,13 +94,15 @@ export default class App extends React.Component {
         marginTop: 32,
         alignContent:'center',
         justifyContent:'center',
-      }}>        
+      }}>      
+      <TouchableOpacity>
               <Image 
       source={item.illustration}
       marginLeft={8}
       style={{width:154, height:203}}
       resizeMode={'stretch'}
         />
+        </TouchableOpacity>
 
         <Text style={{ fontSize: 14 }}>{item.title}</Text>
         <Text style={{color:'#9e9e9e'}}>{item.text}</Text>
@@ -97,8 +111,6 @@ export default class App extends React.Component {
   }
 
   get pagination() {
-
-
     const { carouselItems, activeSlide } = this.state2;
     return (
       <Pagination
@@ -120,10 +132,6 @@ export default class App extends React.Component {
     );
   }
 
-  onChangeText = () => {
-    activeindex
-  }
-
   render() {
 
     return (
@@ -131,8 +139,7 @@ export default class App extends React.Component {
         <View style={styles.header}>
           <Text>네비게이션 부분</Text>
         </View>
-        <ScrollView>
-        <View style={styles.circleindicator}>
+        <ScrollView horizontal={true} style={styles.circleindicator} justifyContent={'center'}>
           <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
             style={styles.characterbutton}>
             <Image
@@ -143,36 +150,7 @@ export default class App extends React.Component {
               resizeMode='stretch'
             />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
-            style={styles.characterbutton}>
-            <Image
-              source={
-                require('./characterimage/강.png')
-              }
-              style={{ width: 37, height: 30 }}
-              resizeMode='stretch'
-            />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
-            style={styles.characterbutton}>
-            <Image
-              source={
-                require('./characterimage/강.png')
-              }
-              style={{ width: 37, height: 30 }}
-              resizeMode='stretch'
-            />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
-            style={styles.characterbutton}>
-            <Image
-              source={
-                require('./characterimage/강.png')
-              }
-              style={{ width: 37, height: 30 }}
-              resizeMode='stretch'
-            />
-          </TouchableOpacity>
+
           <TouchableOpacity onPress={() => Alert.alert('캐릭터')}
             style={styles.characterbutton}>
             <Image
@@ -225,11 +203,8 @@ export default class App extends React.Component {
               }             
                style={{ height:56, width:56 }}
                resizeMode='stretch'
-
             />
           </TouchableOpacity>
-
-        </View>
         </ScrollView>
 
         <View style={styles.category}>
@@ -281,7 +256,6 @@ export default class App extends React.Component {
               inactiveSlideOpacity={1}
             >
             </Carousel>
-              {this.pagination}
           </View>
           
           
